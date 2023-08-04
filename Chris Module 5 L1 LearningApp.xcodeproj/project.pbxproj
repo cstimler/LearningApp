@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50035A5E2A7CE641005932E6 /* Chris_Module_5_L1_LearningAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50035A5D2A7CE641005932E6 /* Chris_Module_5_L1_LearningAppApp.swift */; };
-		50035A602A7CE641005932E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50035A5F2A7CE641005932E6 /* ContentView.swift */; };
+		50035A5E2A7CE641005932E6 /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50035A5D2A7CE641005932E6 /* LearningApp.swift */; };
+		50035A602A7CE641005932E6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50035A5F2A7CE641005932E6 /* HomeView.swift */; };
 		50035A622A7CE642005932E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50035A612A7CE642005932E6 /* Assets.xcassets */; };
 		50035A652A7CE642005932E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50035A642A7CE642005932E6 /* Preview Assets.xcassets */; };
+		50035A712A7CE7F2005932E6 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50035A702A7CE7F2005932E6 /* ContentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50035A5A2A7CE641005932E6 /* Chris Module 5 L1 LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chris Module 5 L1 LearningApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		50035A5D2A7CE641005932E6 /* Chris_Module_5_L1_LearningAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chris_Module_5_L1_LearningAppApp.swift; sourceTree = "<group>"; };
-		50035A5F2A7CE641005932E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		50035A5D2A7CE641005932E6 /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
+		50035A5F2A7CE641005932E6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50035A612A7CE642005932E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50035A642A7CE642005932E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50035A702A7CE7F2005932E6 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,12 @@
 		50035A5C2A7CE641005932E6 /* Chris Module 5 L1 LearningApp */ = {
 			isa = PBXGroup;
 			children = (
-				50035A5D2A7CE641005932E6 /* Chris_Module_5_L1_LearningAppApp.swift */,
-				50035A5F2A7CE641005932E6 /* ContentView.swift */,
+				50035A5D2A7CE641005932E6 /* LearningApp.swift */,
+				50035A6B2A7CE70F005932E6 /* Views */,
+				50035A6E2A7CE727005932E6 /* ViewModels */,
+				50035A6C2A7CE718005932E6 /* Models */,
+				50035A6D2A7CE71E005932E6 /* Resources */,
+				50035A6F2A7CE735005932E6 /* Helpers */,
 				50035A612A7CE642005932E6 /* Assets.xcassets */,
 				50035A632A7CE642005932E6 /* Preview Content */,
 			);
@@ -65,6 +71,43 @@
 				50035A642A7CE642005932E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50035A6B2A7CE70F005932E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50035A5F2A7CE641005932E6 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50035A6C2A7CE718005932E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50035A6D2A7CE71E005932E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		50035A6E2A7CE727005932E6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				50035A702A7CE7F2005932E6 /* ContentModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		50035A6F2A7CE735005932E6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50035A602A7CE641005932E6 /* ContentView.swift in Sources */,
-				50035A5E2A7CE641005932E6 /* Chris_Module_5_L1_LearningAppApp.swift in Sources */,
+				50035A602A7CE641005932E6 /* HomeView.swift in Sources */,
+				50035A5E2A7CE641005932E6 /* LearningApp.swift in Sources */,
+				50035A712A7CE7F2005932E6 /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
