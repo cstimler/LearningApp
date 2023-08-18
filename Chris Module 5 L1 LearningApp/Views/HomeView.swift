@@ -32,7 +32,7 @@ struct HomeView: View {
                                 NavigationLink(destination: ContentView().onAppear(perform: {
                                     
                                     model.beginModule(module.id)
-                                    
+                             //       let _ = print("Module ID learn is  \(module.id)")
                                     
                                     
                                 }),
@@ -45,12 +45,20 @@ struct HomeView: View {
                             
                                 
                                 // Learning card
-                               
+                                NavigationLink(destination: TestView()
+                                    .onAppear(perform: {
+                                        model.beginTest(module.id)
+                                //        let _ = print("Module ID test is  \(module.id)")
+                                    }), tag:module.id, selection: $model.currentTestSelected)
+                                {
+                                    
+                                    // Test card
+                                    HomeViewRow(image: module.test.image, title:"\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
+                                }
                                 
-                                
-                                // Test card
-                                HomeViewRow(image: module.test.image, title:"\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
-                                
+                      //          NavigationLink(destination: EmptyView()) {
+                        //            EmptyView()
+               //                 }
                             }
                             
                         }
@@ -62,6 +70,8 @@ struct HomeView: View {
                 
             }
             .navigationTitle("Get Started")
+           // .navigationBarBackButtonHidden(true)
+            
         }
         .navigationViewStyle(.stack)
     }

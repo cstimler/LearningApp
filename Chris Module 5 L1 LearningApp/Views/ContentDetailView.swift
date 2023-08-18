@@ -11,6 +11,8 @@ import AVKit
 struct ContentDetailView: View {
     
     @EnvironmentObject var model: ContentModel
+    // my trying
+ //   @State var navigated = false
     
     var body: some View {
         
@@ -18,7 +20,7 @@ struct ContentDetailView: View {
         let url = URL(string: Constants.videoHostUrl + (lesson?.video ?? ""))
         
         
-        
+        // NavigationStack {
         VStack {
             
             
@@ -62,36 +64,43 @@ struct ContentDetailView: View {
             else {
                 // Show the complete button instead
                 
-                Button(action: {
-                    // Take the user back to the home view
-                    
-                    model.currentContentSelected = nil
-                    
-                    
-                }, label: {
-                    
-                    ZStack {
+                VStack {
+                    Button(action: {
+                        // Take the user back to the home view
                         
-                        RectangleCard(color: Color.green)
-                            .frame(height:48)
-                        Text("Complete") 
-                            .foregroundColor(.white)
-                            .bold()
+                            model.currentContentSelected = nil
+      //                  navigated = true
                         
-                    }
-                    
-                    
-                    
-                })
+                    }, label: {
+                        
+                        ZStack {
+                            
+                            RectangleCard(color: Color.green)
+                                .frame(height:48)
+                            Text("Complete")
+                                .foregroundColor(.white)
+                                .bold()
+                            
+                        }
+                        
+                        
+                        
+                        
+                    })
+                }
+                
             }
-            
-            
             
         }
         .padding()
         .navigationBarTitle(lesson?.title ?? "")
+     //   .navigationDestination(isPresented: $navigated)
+   //     {  HomeView()
+            
+   //     }
     }
 }
+
 
 struct ContentDetailView_Previews: PreviewProvider {
     static var previews: some View {
