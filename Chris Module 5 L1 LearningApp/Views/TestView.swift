@@ -100,22 +100,39 @@ struct TestView: View {
                 
                 Button {
                     
-                    // Change submitted state as true
-                    submitted = true
-                    
-                    // Check the answer and increment the counter if correct
-                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                    // Check if answer has been submitted
+                    if submitted == true {
                         
-                        numCorrect += 1
-                        let _ = print(numCorrect)
+                        // Answer has already been submitted, move to next question
+                        
+                        model.nextQuestion()
+                        submitted = false
+                        selectedAnswerIndex = nil
+                        
+                        
                     }
+                        else {
+                            
+                            // Submit the answer
+                            // Change submitted state as true
+                            submitted = true
+                            
+                            // Check the answer and increment the counter if correct
+                            if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                                
+                                numCorrect += 1
+                           //     let _ = print(numCorrect)
+                            }
+                        }
+                    
+                   
                 } label: {
                     ZStack {
                         
                         
                         RectangleCard(color: .green)
                             .frame(height: 48)
-                        Text("Submit")
+                        Text(buttonText)
                             .foregroundColor(.white)
                             .bold()
                         
@@ -137,6 +154,30 @@ struct TestView: View {
             
             ProgressView()
         }
+        
+    }
+    
+    var buttonText:String {
+        
+        // Check if answer has been submitted
+        if submitted == true {
+            
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                // This is the last question
+                return "Finish"
+                
+            }
+            
+            else {
+                
+                return "Next"  // or finished
+            }
+            
+           
+        } else {
+            return "Submit"
+        }
+        
         
     }
 }
