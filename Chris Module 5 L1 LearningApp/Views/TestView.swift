@@ -151,8 +151,9 @@ struct TestView: View {
         }
             
         else {
-            
-            ProgressView()
+            // If current question is nil, we show the testresultview
+         //   ProgressView()
+            TestResultView(numCorrect: numCorrect)
         }
         
     }
