@@ -13,32 +13,34 @@ struct ContentViewRow: View {
     var index:Int
     
     var body: some View {
-        let lesson = model.currentModule!.content.lessons[index]
-        
-        
-        // Lesson card
-        
-        ZStack (alignment: .leading) {
+        if model.currentModule != nil && model.currentModule!.content.lessons.count > index { // added this as bug fix
+            let lesson = model.currentModule!.content.lessons[index]
             
-            Rectangle()
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .shadow(radius: 5)
-                .frame(height: 66)
             
-            HStack (spacing: 30) {
-                Text(String(index + 1))
-                    .bold()
-                VStack (alignment: .leading){
-                    
-                    Text(lesson.title)
-                    Text(lesson.duration)
-                }
+            // Lesson card
+            
+            ZStack (alignment: .leading) {
                 
+                Rectangle()
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    .frame(height: 66)
+                
+                HStack (spacing: 30) {
+                    Text(String(index + 1))
+                        .bold()
+                    VStack (alignment: .leading){
+                        
+                        Text(lesson.title)
+                        Text(lesson.duration)
+                    }
+                    
+                }
+                .padding()
             }
-            .padding()
+            .padding(.bottom, 5)
         }
-        .padding(.bottom, 5)
     }
 }
 /*

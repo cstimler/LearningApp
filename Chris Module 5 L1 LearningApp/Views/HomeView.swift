@@ -11,7 +11,11 @@ struct HomeView: View {
     
     @EnvironmentObject var model: ContentModel
     
+    @State var x = 1
+    
     var body: some View {
+        
+     
         
         NavigationView {
             
@@ -60,14 +64,23 @@ struct HomeView: View {
                         //            EmptyView()
                //                 }
                             }
-                            
+                            .padding(.bottom, 10)
                         }
                     }
                     .padding()
                     .accentColor(.black)
                     
+               /*
+                    .onAppear(perform: {x = x+1
+                        let _ = print("\(x)")
+                    })
+                    .onChange(of: x) { newValue in
+                        model.currentModule = nil
+                    }
+               */
+                    
+                    
                 }
-                
             }
             .navigationTitle("Get Started")
            // .navigationBarBackButtonHidden(true)
@@ -76,6 +89,8 @@ struct HomeView: View {
         .navigationViewStyle(.stack)
     }
 }
+    
+   
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

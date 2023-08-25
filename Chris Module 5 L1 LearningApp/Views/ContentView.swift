@@ -13,8 +13,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        
-        
+       
             ScrollView {
                 
                 LazyVStack {
@@ -22,7 +21,7 @@ struct ContentView: View {
                     // Confirm that currentModule is set
                     
                     if model.currentModule != nil {
-                        
+                      
                         ForEach(0..<model.currentModule!.content.lessons.count) {index in
                             
                             NavigationLink(destination: ContentDetailView()
@@ -48,6 +47,7 @@ struct ContentView: View {
         
         
     }
+        
 }
 
 struct ContentView_Previews: PreviewProvider {
